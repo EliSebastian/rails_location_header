@@ -8,7 +8,7 @@ module CreatedEntityHeader
 
     private
 
-    def :add_location_header
+    def add_location_header
       return unless response.status == 201
 
       created_resource = instance_variable_get("@#{controller_name.singularize}")
@@ -16,7 +16,7 @@ module CreatedEntityHeader
 
       response.headers['X-Entity-ID'] = created_resource.id.to_s
 
-      response.headers['Location'] = url_for(created_resource)
+      # response.headers['Location'] = url_for(created_resource)
     end
   end
 end
