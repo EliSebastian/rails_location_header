@@ -5,20 +5,20 @@ require_relative "lib/rails_location_header/version"
 Gem::Specification.new do |spec|
   spec.name = "rails_location_header"
   spec.version = RailsLocationHeader::VERSION
-  spec.authors = ["TODO: Write your name"]
+  spec.authors = ["Eli Sebastian Herrera Aguilar"]
   spec.email = ["esrbastianherrera@gmail.com"]
 
-  spec.summary = "TODO: Write a short summary, because RubyGems requires one."
-  spec.description = "TODO: Write a longer description or delete this line."
-  spec.homepage = "TODO: Put your gem's website or public repo URL here."
+  spec.summary = "Adds X-Entity-ID and Location headers in create actions."
+  spec.description = "A Rails gem that automatically adds X-Entity-ID and Location headers when a new record is created successfully."
+  spec.homepage = "https://github.com/EliSebastian/rails_location_header"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0.0"
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
+  spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
-  spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
+  spec.metadata["source_code_uri"] = "https://github.com/EliSebastian/rails_location_header"
+  spec.metadata["changelog_uri"] = "https://github.com/EliSebastian/rails_location_header/blob/main/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
@@ -29,9 +29,12 @@ Gem::Specification.new do |spec|
         f.start_with?(*%w[bin/ test/ spec/ features/ .git appveyor Gemfile])
     end
   end
+
   spec.bindir = "exe"
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+
+  spec.add_dependency "rails", ">= 6.0"
 
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"
