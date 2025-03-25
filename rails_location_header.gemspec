@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative "lib/rails_location_header/version"
 
 Gem::Specification.new do |spec|
@@ -9,7 +7,8 @@ Gem::Specification.new do |spec|
   spec.email = ["esrbastianherrera@gmail.com"]
 
   spec.summary = "Adds X-Entity-ID and Location headers in create actions."
-  spec.description = "A Rails gem that automatically adds X-Entity-ID and Location headers when a new record is created successfully."
+  spec.description = "A Rails gem that automatically adds X-Entity-ID and Location headers when a new record is created
+                      successfully."
   spec.homepage = "https://github.com/EliSebastian/rails_location_header"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0.0"
@@ -35,10 +34,4 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "rails", ">= 6.0"
-
-  # Uncomment to register a new dependency of your gem
-  # spec.add_dependency "example-gem", "~> 1.0"
-
-  # For more information and examples about making a new gem, check out our
-  # guide at: https://bundler.io/guides/creating_gem.html
 end
