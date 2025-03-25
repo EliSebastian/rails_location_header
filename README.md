@@ -18,12 +18,22 @@ gem install rails_location_header
 
 ## Usage
 
-To use this gem, include it in your Rails application. The gem automatically integrates with Rails controllers via a Railtie. When a `create` action successfully creates a resource (with a `201 Created` status), the following headers are added to the response:
+To use this gem, include it in your Rails application. The gem automatically integrates with Rails controllers via a Railtie and works out of the box.
+
+### How It Works
+
+1. **`create` action with a 201 status**: The `create` action must return an HTTP `201 Created` status.
+2. **Instance variable**: Declare an instance variable in the `create` action that matches the entity name (e.g., `@post` in `PostsController`).
+3. **`show` action and route**: Ensure the controller has a `show` action and a corresponding route to construct the resource's URL.
+
+### Headers Added
+
+When the above requirements are met, the gem automatically adds the following headers to the response:
 
 - `X-Entity-ID`: The ID of the created resource.
 - `Location`: The URL of the created resource.
 
-No additional configuration is required. Simply include the gem in your project, and it will work out of the box.
+No additional configuration is needed.
 
 ## Development
 
